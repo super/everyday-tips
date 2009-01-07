@@ -13,3 +13,4 @@ map.home '', :controller => 'home' 即可让它转到主页去。
 6。将public/index.rhtml 文件删除，然后看一下浏览器效果。看到HOME#index说明正常了。
 7。将网站的css样式代码以及javascript脚本代码下下来，放到public/javascripts||public/stylesheets文件下。
 8。创建一个用户表 :user， 用于注册.
+9。 在控制器new action里声明一个实例变量@user = User.new，为了用户注册
