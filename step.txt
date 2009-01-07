@@ -1,1 +1,15 @@
-aa
+**:vi ~/.vimrc 回车进入配置属性的文件。**
+1. 创建数据库 alpha
+2. 修改config/database.yml，将数据库名设为alpha,设上密码。
+3. 建一个session，命令：rake db:sessions:create ；然后rake db:migrate 生成。
+注意：创建了一个session之后，要将app/controller/application.rb文件里的一条注释撤消
+   ＃ :secret => '64130d24af4898d7f3c6d30267b45184'
+   然后将config/environment.rb里的65行的注释撤消：
+   ＃ config.action_controller.session_store = :active_record_store
+4。Rserver 一下。看看页面有什么效果。如果出现500 server error，表示session没建好。
+5. 建一个主页的控制器:home，然后给它传一个 index 动作。
+6。在config/routes.rb 文件里设置一下具名路由:
+map.home '', :controller => 'home' 即可让它转到主页去。
+6。将public/index.rhtml 文件删除，然后看一下浏览器效果。看到HOME#index说明正常了。
+7。将网站的css样式代码以及javascript脚本代码下下来，放到public/javascripts||public/stylesheets文件下。
+8。创建一个用户表 :user， 用于注册.
