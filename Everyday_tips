@@ -2,4 +2,5 @@
 2. git remote add origin git@github.com:account_name/project_name 给自己私有的克隆地址起一个别名（默认情况下规定为:origin)
 3. git checkout -b apple_works 在当前项目里新建一个分支叫：apple_works，并进入。。
 4. 添加一个文件之后就要用命令：git add 文件名，然后再git commit 一下。但如果你只是删除一个文件，就只要git commit 一下就好了。
-
+5. 新建一个users控制器，将页面代码拷贝上去之后，在控制器里new action动作下初始化一个User实例变量：＠user = User.new
+启动一下服务器，报错ERROR：未初始化的控制器:User，遇到这个问题之后，只要重新启动一下服务器，：Rserver!就可以了。（未完全理解）
