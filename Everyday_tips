@@ -4,3 +4,13 @@
 4. 添加一个文件之后就要用命令：git add 文件名，然后再git commit 一下。但如果你只是删除一个文件，就只要git commit 一下就好了。
 5. 新建一个users控制器，将页面代码拷贝上去之后，在控制器里new action动作下初始化一个User实例变量：＠user = User.new
 启动一下服务器，报错ERROR：未初始化的控制器:User，遇到这个问题之后，只要重新启动一下服务器，：Rserver!就可以了。（未完全理解）
+6。self的三种用法以及理解。。*(粗体为重点)*
+1）声明一个类方法而不是一个实例方法
+def *self.authenerate*(password,salt)
+end
+2）调用时加上 self 就说明调用的是一个方法，将后面的值作为参数传入并处理，而不是只是单纯的给一个变量赋值
+*self.hashed_password* = User.entrypted_password(self.password,self.salt)
+end
+3）调用实例化对象
+self.salt = *self.object_id.to_s ＊+ rand.to_s
+end
